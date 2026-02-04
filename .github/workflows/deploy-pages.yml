@@ -22,10 +22,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Prepare site (Cursor Vibe folder)
+      - name: Prepare site (root: index.html, styles.css, script.js)
         run: |
           mkdir -p _site
-          cp "Cursor Vibe/index.html" "Cursor Vibe/styles.css" "Cursor Vibe/script.js" _site/
+          cp index.html styles.css script.js _site/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
