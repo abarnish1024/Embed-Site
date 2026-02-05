@@ -57,14 +57,16 @@
 
     <section id="demo" class="section">
       <h2>Try it</h2>
-      <p class="section-desc">Embed your software below—replace the <code>src</code> URL with your app's live link.</p>
+      <p class="section-desc">Omni dashboard embed—a fresh signed URL is loaded from the API so you don't get 403.</p>
       <div class="iframe-wrap">
         <iframe
-          src="https://andrewbarnish.embed-omniapp.co/embed/login?contentPath=%2Fdashboards%2Fc99da56b&externalId=test_id&name=Andrew+Barnish&nonce=7BIWG7Uy063aSqu9ZjkgQ9lFGma4nAMd&signature=Y4MDyqaSrgeCGumNCgun9nGEBiGXGV7O2P3CZMIn-3A&accessBoost=true&preserveEntityFolderContentRole=false"
+          id="omni-embed-iframe"
+          data-embed-api="/api/embed-url"
           title="Omni Analytics"
           allow="fullscreen"
           loading="lazy"
         ></iframe>
+        <p id="embed-status" class="embed-status" aria-live="polite"></p>
       </div>
     </section>
 

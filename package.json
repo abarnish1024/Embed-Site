@@ -1,0 +1,12 @@
+{
+  "name": "embed-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Demo site with Omni embed; API generates fresh signed URLs.",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@omni-co/embed": "^0.17.0"
+  }
+}

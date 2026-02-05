@@ -198,6 +198,16 @@ main {
   border: none;
 }
 
+.embed-status {
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.embed-status--error {
+  color: #f87171;
+}
+
 /* Project grid */
 .project-grid {
   display: grid;
