@@ -17,6 +17,7 @@
     <nav>
       <a href="./" class="logo">TEST</a>
       <ul>
+        <li><a href="login.html">Switch user</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#demo">Demo</a></li>
@@ -57,8 +58,9 @@
     </section>
 
     <section id="demo" class="section">
-      <h2>Try it</h2>
-      <p class="section-desc">Omni dashboard embed—a fresh signed URL is loaded from the API so you don't get 403.</p>
+      <h2>Omni BI embed</h2>
+      <p class="section-desc">Dashboard filtered by the user you chose on the login page. <a href="login.html">Switch user</a> to see different data (demo only).</p>
+      <p id="viewing-as" class="viewing-as"></p>
       <div class="iframe-wrap">
         <iframe
           id="omni-embed-iframe"

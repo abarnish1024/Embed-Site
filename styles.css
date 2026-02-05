@@ -208,6 +208,67 @@ main {
   color: #f87171;
 }
 
+.viewing-as {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  color: var(--accent);
+}
+
+/* Login page */
+.login-main {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+}
+
+.login-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem;
+}
+
+.login-card h1 {
+  font-size: 1.75rem;
+  margin: 0 0 1rem;
+}
+
+.login-desc {
+  color: var(--text-muted);
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.demo-users {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-demo-user {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-demo-user:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.login-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
 /* Project grid */
 .project-grid {
   display: grid;

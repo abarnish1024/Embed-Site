@@ -36,8 +36,9 @@ module.exports = async (req, res) => {
   }
 
   const contentId = process.env.OMNI_CONTENT_ID || 'c99da56b';
-  const externalId = process.env.OMNI_EXTERNAL_ID || 'test_id';
-  const name = process.env.OMNI_NAME || 'Andrew Barnish';
+  // For demo: allow query params to override user (so login page can pass chosen user). In production you'd set these server-side from your auth.
+  const externalId = (req.query && req.query.externalId) || process.env.OMNI_EXTERNAL_ID || 'test_id';
+  const name = (req.query && req.query.name) || process.env.OMNI_NAME || 'Andrew Barnish';
   const accessBoost = process.env.OMNI_ACCESS_BOOST !== 'false';
   const preserveEntityFolderContentRole = process.env.OMNI_PRESERVE_ENTITY_FOLDER_CONTENT_ROLE === 'true';
 

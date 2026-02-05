@@ -21,6 +21,20 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     ? window.OMNI_EMBED_API
     : (iframe.getAttribute('data-embed-api') || '/api/embed-url');
 
+  var demoUser = null;
+  try {
+    var stored = sessionStorage.getItem('demoUser');
+    if (stored) demoUser = JSON.parse(stored);
+  } catch (e) {}
+  var viewingAsEl = document.getElementById('viewing-as');
+  if (viewingAsEl) {
+    viewingAsEl.textContent = demoUser && demoUser.name ? 'Viewing as: ' + demoUser.name : '';
+  }
+  if (demoUser && demoUser.externalId && demoUser.name) {
+    var sep = apiUrl.indexOf('?') >= 0 ? '&' : '?';
+    apiUrl += sep + 'externalId=' + encodeURIComponent(demoUser.externalId) + '&name=' + encodeURIComponent(demoUser.name);
+  }
+
   fetch(apiUrl)
     .then(function (res) {
       if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
