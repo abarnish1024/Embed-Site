@@ -22,7 +22,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Prepare site (root: index.html, styles.css, script.js)
+      - name: "Prepare site (root: index.html, styles.css, script.js)"
         run: |
           mkdir -p _site
           cp index.html styles.css script.js _site/
