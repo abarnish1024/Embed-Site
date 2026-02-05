@@ -22,10 +22,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: "Prepare site (root: index.html, styles.css, script.js)"
+      - name: Verify root files exist
+        run: |
+          ls -la index.html styles.css script.js || (echo "Missing files - ensure index.html, styles.css, script.js are in repo root" && exit 1)
+
+      - name: Prepare site
         run: |
           mkdir -p _site
           cp index.html styles.css script.js _site/
+          ls -la _site/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
