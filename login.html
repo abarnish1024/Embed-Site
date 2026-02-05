@@ -14,7 +14,7 @@
 
   <header>
     <nav>
-      <a href="./" class="logo">Omni BI embed</a>
+      <a href="./" class="logo">F1 Results</a>
       <ul>
         <li><a href="index.html">Dashboard</a></li>
       </ul>
@@ -23,44 +23,47 @@
 
   <main class="login-main">
     <section class="login-card">
-      <h1>Choose a demo user</h1>
+      <h1>Select your team</h1>
       <p class="login-desc">
-        This is for demo only. Pick a user to see how the embedded Omni dashboard can show different data based on who is &ldquo;logged in&rdquo;&mdash;no real authentication.
+        Choose an F1 team to view the dashboard as that team. The embed can show different data based on who is &ldquo;logged in&rdquo;&mdash;demo only, no real authentication.
       </p>
-      <div class="demo-users">
-        <button type="button" class="btn btn-demo-user" data-external-id="demo-sales" data-name="Sales Rep">
-          Sales Rep
-        </button>
-        <button type="button" class="btn btn-demo-user" data-external-id="demo-manager" data-name="Regional Manager">
-          Regional Manager
-        </button>
-        <button type="button" class="btn btn-demo-user" data-external-id="demo-exec" data-name="Executive">
-          Executive
-        </button>
-        <button type="button" class="btn btn-demo-user" data-external-id="test_id" data-name="Andrew Barnish">
-          Andrew Barnish
-        </button>
-      </div>
-      <p class="login-note">The dashboard will load with this user&rsquo;s context so you can show role-based filtering.</p>
+      <form id="login-form" class="login-form">
+        <label for="team-select" class="login-label">F1 team</label>
+        <select id="team-select" class="login-select" required>
+          <option value="" disabled selected>Select a team</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="red-bull">Red Bull Racing</option>
+          <option value="ferrari">Ferrari</option>
+          <option value="mclaren">McLaren</option>
+          <option value="alpine">Alpine</option>
+          <option value="aston-martin">Aston Martin</option>
+          <option value="williams">Williams</option>
+          <option value="rb">RB</option>
+          <option value="haas">Haas</option>
+          <option value="sauber">Kick Sauber</option>
+        </select>
+        <button type="submit" class="btn btn-primary">View dashboard</button>
+      </form>
+      <p class="login-note">The dashboard will load with this team&rsquo;s context so you can show team-based filtering.</p>
     </section>
   </main>
 
   <footer>
-    <p>Omni BI embed demo · <a href="index.html">Go to dashboard</a></p>
+    <p>F1 Results · <a href="index.html">Go to dashboard</a></p>
   </footer>
 
   <script>
-    document.querySelectorAll('.btn-demo-user').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var externalId = this.getAttribute('data-external-id');
-        var name = this.getAttribute('data-name');
-        if (externalId && name) {
-          try {
-            sessionStorage.setItem('demoUser', JSON.stringify({ externalId: externalId, name: name }));
-          } catch (e) {}
-          window.location.href = 'index.html';
-        }
-      });
+    document.getElementById('login-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var select = document.getElementById('team-select');
+      var externalId = select.value;
+      var name = select.options[select.selectedIndex].text;
+      if (externalId && name) {
+        try {
+          sessionStorage.setItem('demoUser', JSON.stringify({ externalId: externalId, name: name }));
+        } catch (err) {}
+        window.location.href = 'index.html';
+      }
     });
   </script>
 </body>
