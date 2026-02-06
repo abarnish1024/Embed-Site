@@ -33,6 +33,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   if (demoUser && demoUser.externalId && demoUser.name) {
     var sep = apiUrl.indexOf('?') >= 0 ? '&' : '?';
     apiUrl += sep + 'externalId=' + encodeURIComponent(demoUser.externalId) + '&name=' + encodeURIComponent(demoUser.name);
+    apiUrl += '&team=' + encodeURIComponent(demoUser.name);
   }
 
   fetch(apiUrl)
