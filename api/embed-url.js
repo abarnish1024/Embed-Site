@@ -7,7 +7,7 @@
  * Optional (defaults shown):
  *   OMNI_HOST          - e.g. "andrewbarnish.embed-omniapp.co" (use this OR OMNI_ORGANIZATION_NAME)
  *   OMNI_ORGANIZATION_NAME - e.g. "andrewbarnish" (ignored if OMNI_HOST is set)
- *   OMNI_CONTENT_ID    - Dashboard short GUID, e.g. "c99da56b"
+ *   OMNI_CONTENT_ID    - Dashboard short GUID, e.g. "1f94b35e"
  *   OMNI_EXTERNAL_ID   - External user id, e.g. "test_id"
  *   OMNI_NAME          - Display name, e.g. "Andrew Barnish"
  *   OMNI_ACCESS_BOOST  - "true" or "false"
@@ -35,7 +35,7 @@ module.exports = async (req, res) => {
     return res.status(500).json({ error: 'OMNI_EMBED_SECRET not configured' });
   }
 
-  const contentId = process.env.OMNI_CONTENT_ID || 'c99da56b';
+  const contentId = process.env.OMNI_CONTENT_ID || '1f94b35e';
   // For demo: allow query params to override user (so login page can pass chosen user). In production you'd set these server-side from your auth.
   const externalId = (req.query && req.query.externalId) || process.env.OMNI_EXTERNAL_ID || 'test_id';
   const name = (req.query && req.query.name) || process.env.OMNI_NAME || 'Andrew Barnish';

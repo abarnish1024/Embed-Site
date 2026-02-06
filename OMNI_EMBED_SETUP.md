@@ -21,7 +21,7 @@ In your Vercel project: **Settings → Environment Variables**. Add:
 | `OMNI_EMBED_SECRET` | **Yes** | *(from Omni Admin → Embed)* | Your embed signing secret. Never expose in the frontend. |
 | `OMNI_HOST` | No* | `andrewbarnish.embed-omniapp.co` | Use for vanity domain. Omit if using `OMNI_ORGANIZATION_NAME`. |
 | `OMNI_ORGANIZATION_NAME` | No* | `andrewbarnish` | Default host is `https://<org>.embed-omniapp.co`. Ignored if `OMNI_HOST` is set. |
-| `OMNI_CONTENT_ID` | No | `c99da56b` | Dashboard short GUID (from dashboard URL). |
+| `OMNI_CONTENT_ID` | No | `1f94b35e` | Dashboard short GUID (from dashboard URL). |
 | `OMNI_EXTERNAL_ID` | No | `test_id` | External user id for the embed user. |
 | `OMNI_NAME` | No | `Andrew Barnish` | Display name for the embed user. |
 | `OMNI_ACCESS_BOOST` | No | `true` | `true` or `false`. |
