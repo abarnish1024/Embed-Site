@@ -53,6 +53,11 @@ module.exports = async (req, res) => {
       preserveEntityFolderContentRole,
     };
     if (team) base.userAttributes = { Team: team };
+    // Custom theme per team (Omni theme IDs from your app)
+    const teamThemeIds = {
+      'Red Bull': '53269f62-23d4-4e53-b395-a25c04e2f956',
+    };
+    if (team && teamThemeIds[team]) base.customThemeId = teamThemeIds[team];
     const opts = process.env.OMNI_HOST
       ? { ...base, host: process.env.OMNI_HOST }
       : { ...base, organizationName: process.env.OMNI_ORGANIZATION_NAME || 'andrewbarnish' };
