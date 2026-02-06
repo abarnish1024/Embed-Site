@@ -30,6 +30,14 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   if (viewingAsEl) {
     viewingAsEl.textContent = demoUser && demoUser.name ? 'Viewing as: ' + demoUser.name : '';
   }
+  var switchLabel = demoUser && demoUser.name ? 'Switch from ' + demoUser.name : 'Switch team';
+  document.querySelectorAll('.switch-team-link').forEach(function (el) {
+    el.textContent = switchLabel;
+  });
+  var switchTeamLabelEl = document.getElementById('switch-team-label');
+  if (switchTeamLabelEl) {
+    switchTeamLabelEl.textContent = '"' + switchLabel + '"';
+  }
   if (demoUser && demoUser.externalId && demoUser.name) {
     var sep = apiUrl.indexOf('?') >= 0 ? '&' : '?';
     apiUrl += sep + 'externalId=' + encodeURIComponent(demoUser.externalId) + '&name=' + encodeURIComponent(demoUser.name);
