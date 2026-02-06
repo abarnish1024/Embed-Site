@@ -186,7 +186,7 @@ main {
   border-radius: 12px;
   overflow: hidden;
   background: var(--surface);
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 27; /* ~3× height of 16/9 */
 }
 
 .iframe-wrap iframe {
