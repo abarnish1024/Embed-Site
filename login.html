@@ -11,11 +11,14 @@
 </head>
 <body>
   <div class="noise"></div>
+  <div class="track-line track-line--top"></div>
 
-  <header>
+  <header class="site-header">
     <nav>
-      <a href="./" class="logo">F1 Results</a>
-      <ul>
+      <a href="./" class="logo">
+        <span class="logo-icon">◈</span> F1 Team Portal
+      </a>
+      <ul class="nav-links">
         <li><a href="index.html">Dashboard</a></li>
       </ul>
     </nav>
@@ -25,7 +28,7 @@
     <section class="login-card">
       <h1>Select your team</h1>
       <p class="login-desc">
-        Choose an F1 team to view the dashboard as that team. The embed can show different data based on who is &ldquo;logged in&rdquo;&mdash;demo only, no real authentication.
+        Choose your constructor to view the team dashboard. You&rsquo;ll see stats and analytics filtered for that team.
       </p>
       <form id="login-form" class="login-form">
         <label for="team-select" class="login-label">F1 team</label>
@@ -44,12 +47,13 @@
         </select>
         <button type="submit" class="btn btn-primary">View dashboard</button>
       </form>
-      <p class="login-note">The dashboard will load with this team&rsquo;s context so you can show team-based filtering.</p>
+      <p class="login-note">Your dashboard will load with this team&rsquo;s context and theme.</p>
     </section>
   </main>
 
-  <footer>
-    <p>F1 Results · <a href="index.html">Go to dashboard</a></p>
+  <footer class="site-footer">
+    <div class="track-line track-line--bottom"></div>
+    <p>F1 Team Portal · <a href="index.html">Go to dashboard</a></p>
   </footer>
 
   <script>

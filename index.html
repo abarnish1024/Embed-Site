@@ -4,63 +4,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Barnish | F1</title>
+  <title>F1 Team Portal | Performance &amp; Stats</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="noise"></div>
-  
-  <header>
+  <div class="track-line track-line--top"></div>
+
+  <header class="site-header">
     <nav>
-      <a href="./" class="logo">F1 Results</a>
-      <ul>
-        <li><a href="login.html">Switch user</a></li>
-        <li><a href="#about">Drivers</a></li>
-        <li><a href="#projects">Teams</a></li>
-        <li><a href="#demo">Tracks</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <a href="./" class="logo">
+        <span class="logo-icon">◈</span> F1 Team Portal
+      </a>
+      <ul class="nav-links">
+        <li><a href="#demo">Dashboard</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="login.html" class="nav-cta">Switch team</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <span class="hero-label">Formula 1</span>
-      <h1>Barnish</h1>
-      <p class="hero-tagline">One stop shop for all data related to F1. I WANNA GO FAST!</p>
-      <a href="#contact" class="btn btn-primary">Race</a>
-    </section>
-
-    <section id="about" class="section">
-      <h2>About</h2>
-      <p>Use this site to explore all things F1 data.</p>
-    </section>
-
-    <section id="projects" class="section">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <article class="card">
-          <h3>Project One</h3>
-          <p>A brief description of your first project.</p>
-        </article>
-        <article class="card">
-          <h3>Project Two</h3>
-          <p>A brief description of your second project.</p>
-        </article>
-        <article class="card">
-          <h3>Project Three</h3>
-          <p>A brief description of your third project.</p>
-        </article>
+    <section class="hero hero--compact">
+      <div class="hero-inner">
+        <span class="hero-label">Formula 1 · Team analytics</span>
+        <h1 class="hero-title">Your team dashboard</h1>
+        <p class="hero-tagline">Performance data, stats, and insights for your team. Select your team at login to see your view.</p>
+        <p id="viewing-as" class="viewing-as viewing-as-badge"></p>
       </div>
     </section>
 
-    <section id="demo" class="section">
-      <h2>Omni BI embed</h2>
-      <p class="section-desc">Dashboard filtered by the user you chose on the login page. <a href="login.html">Switch user</a> to see different data (demo only).</p>
-      <p id="viewing-as" class="viewing-as"></p>
+    <section id="demo" class="section section--dashboard">
+      <div class="section-header">
+        <h2 class="section-title">Live stats &amp; analytics</h2>
+        <p class="section-desc">Your embedded dashboard—filtered by the team you selected. <a href="login.html">Switch team</a> to see another view.</p>
+      </div>
       <div class="iframe-wrap">
         <iframe
           id="omni-embed-iframe"
@@ -73,14 +54,31 @@
       </div>
     </section>
 
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <p>Reach out—add your email, social links, or a contact form here.</p>
+    <section id="about" class="section section--about">
+      <h2 class="section-title">About this portal</h2>
+      <div class="about-grid">
+        <article class="card">
+          <span class="card-kicker">Teams</span>
+          <h3>Ten constructors</h3>
+          <p>Each F1 team has a dedicated view. Log in as your team to see your performance data and stats.</p>
+        </article>
+        <article class="card">
+          <span class="card-kicker">Data</span>
+          <h3>Real-time analytics</h3>
+          <p>Dashboards are filtered by team so you only see the metrics that matter to your constructor.</p>
+        </article>
+        <article class="card">
+          <span class="card-kicker">Access</span>
+          <h3>Switch anytime</h3>
+          <p>Use “Switch team” to view the portal as another team—handy for demos and cross-team review.</p>
+        </article>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>Built with care · Hosted on <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a></p>
+  <footer class="site-footer">
+    <div class="track-line track-line--bottom"></div>
+    <p>F1 Team Portal · Performance &amp; stats for constructors</p>
   </footer>
 
   <script src="script.js"></script>
