@@ -7,79 +7,35 @@
   <title>F1 Team Portal | Performance &amp; Stats</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="noise"></div>
-  <div class="track-line track-line--top"></div>
 
-  <header class="site-header">
-    <nav>
-      <a href="./" class="logo">
-        <span class="logo-icon">◈</span> F1 Team Portal
-      </a>
-      <ul class="nav-links">
-        <li><a href="#demo">Dashboard</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="login.html" class="nav-cta switch-team-link">Switch team</a></li>
-      </ul>
-    </nav>
+  <header class="app-bar">
+    <a href="./" class="app-bar__logo">
+      <span class="app-bar__logo-icon">◈</span>
+      <span class="app-bar__logo-text">F1 Team Portal</span>
+    </a>
+    <div class="app-bar__right">
+      <p id="viewing-as" class="app-bar__team viewing-as-badge"></p>
+      <a href="login.html" class="app-bar__switch switch-team-link">Switch team</a>
+    </div>
   </header>
 
-  <main>
-    <section class="hero hero--compact">
-      <div class="hero-inner">
-        <span class="hero-label">Formula 1 · Team analytics</span>
-        <h1 class="hero-title">Your team dashboard</h1>
-        <p class="hero-tagline">Performance data, stats, and insights for your team. Select your team at login to see your view.</p>
-        <p id="viewing-as" class="viewing-as viewing-as-badge"></p>
-      </div>
-    </section>
-
-    <section id="demo" class="section section--dashboard">
-      <div class="section-header">
-        <h2 class="section-title">Live stats &amp; analytics</h2>
-        <p class="section-desc">Your embedded dashboard—filtered by the team you selected. <a href="login.html" class="switch-team-link">Switch team</a> to see another view.</p>
-      </div>
-      <div class="iframe-wrap">
-        <iframe
-          id="omni-embed-iframe"
-          data-embed-api="/api/embed-url"
-          title="Omni Analytics"
-          allow="fullscreen"
-          loading="lazy"
-        ></iframe>
-        <p id="embed-status" class="embed-status" aria-live="polite"></p>
-      </div>
-    </section>
-
-    <section id="about" class="section section--about">
-      <h2 class="section-title">About this portal</h2>
-      <div class="about-grid">
-        <article class="card">
-          <span class="card-kicker">Teams</span>
-          <h3>Ten constructors</h3>
-          <p>Each F1 team has a dedicated view. Log in as your team to see your performance data and stats.</p>
-        </article>
-        <article class="card">
-          <span class="card-kicker">Data</span>
-          <h3>Real-time analytics</h3>
-          <p>Dashboards are filtered by team so you only see the metrics that matter to your constructor.</p>
-        </article>
-        <article class="card">
-          <span class="card-kicker">Access</span>
-          <h3>Switch anytime</h3>
-          <p>Use <span id="switch-team-label">"Switch team"</span> to view the portal as another team—handy for demos and cross-team review.</p>
-        </article>
-      </div>
-    </section>
+  <main class="app-main" id="demo">
+    <div class="embed-container">
+      <iframe
+        id="omni-embed-iframe"
+        data-embed-api="/api/embed-url"
+        title="Team dashboard"
+        allow="fullscreen"
+        loading="lazy"
+      ></iframe>
+      <p id="embed-status" class="embed-status" aria-live="polite"></p>
+    </div>
   </main>
-
-  <footer class="site-footer">
-    <div class="track-line track-line--bottom"></div>
-    <p>F1 Team Portal · Performance &amp; stats for constructors</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>

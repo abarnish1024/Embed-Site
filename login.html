@@ -3,25 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demo login | Omni BI embed</title>
+  <title>Select team | F1 Team Portal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="noise"></div>
-  <div class="track-line track-line--top"></div>
 
-  <header class="site-header">
-    <nav>
-      <a href="./" class="logo">
-        <span class="logo-icon">◈</span> F1 Team Portal
-      </a>
-      <ul class="nav-links">
-        <li><a href="index.html">Dashboard</a></li>
-      </ul>
-    </nav>
+  <header class="app-bar">
+    <a href="./" class="app-bar__logo">
+      <span class="app-bar__logo-icon">◈</span>
+      <span class="app-bar__logo-text">F1 Team Portal</span>
+    </a>
+    <a href="index.html" class="app-bar__switch">Dashboard</a>
   </header>
 
   <main class="login-main">
@@ -50,11 +46,6 @@
       <p class="login-note">Your dashboard will load with this team&rsquo;s context and theme.</p>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <div class="track-line track-line--bottom"></div>
-    <p>F1 Team Portal · <a href="index.html">Go to dashboard</a></p>
-  </footer>
 
   <script>
     document.getElementById('login-form').addEventListener('submit', function (e) {
