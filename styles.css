@@ -193,9 +193,16 @@ main {
   padding: 3rem 0;
 }
 
+/* Dashboard section breaks out to use full width so the embed has room (tiles not squeezed) */
 .section--dashboard {
   padding-top: 2rem;
   border-top: 1px solid var(--border);
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  width: 100vw;
+  max-width: 100vw;
+  padding-left: max(1.5rem, calc(50vw - 800px));
+  padding-right: max(1.5rem, calc(50vw - 800px));
 }
 
 .section-header {
